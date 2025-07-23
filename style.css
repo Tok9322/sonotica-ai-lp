@@ -1,0 +1,250 @@
+:root {
+    --bg-color: #f0f8f8;
+    --text-color: #1e1e1e;
+    --accent-color-1: #00c2a8; /* エメラルドグリーン */
+    --accent-color-2: #f9c74f; /* サンセットイエロー */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-secondary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+}
+
+a {
+    color: var(--accent-color-1);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color-2);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    /* 仮の背景画像です。images/hero-bg.jpg を用意してください */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .catchphrase {
+    font-size: 1.5rem;
+    font-family: var(--font-primary);
+    margin-bottom: 2rem;
+    color: var(--accent-color-2);
+}
+
+.latest-release {
+    background: rgba(20, 30, 40, 0.7);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color-1);
+    max-width: 550px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+}
+
+.latest-release-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.latest-release-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.latest-release-info {
+    flex-grow: 1;
+}
+
+.latest-release-info h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--accent-color-2);
+}
+
+.latest-release-info p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.latest-release-info audio {
+    width: 100%;
+}
+
+/* Music Section */
+.music-section {
+    background: var(--bg-color-dark);
+}
+
+.artist-section {
+    margin-bottom: 3rem;
+}
+
+.album-card {
+    display: flex;
+    gap: 2rem;
+    background: var(--bg-color-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.album-art {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.album-info {
+    flex-grow: 1;
+}
+
+.album-info h3 {
+    font-size: 1.8rem;
+    margin: 0 0 0.25rem 0;
+    color: var(--primary-color);
+}
+
+.album-info h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.75rem 0;
+    color: var(--accent-color-2);
+}
+
+.album-info p {
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    opacity: 0.8;
+}
+
+.album-player {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.playlist li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--bg-color-dark);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.playlist li:last-child {
+    border-bottom: none;
+}
+
+.playlist li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.playlist li.playing {
+    background-color: var(--accent-color-1-trans);
+    color: var(--accent-color-1);
+    font-weight: bold;
+}
+
+.playlist li.playing::before {
+    content: '▶';
+    font-size: 0.8rem;
+    margin-right: 0.25rem;
+    color: var(--accent-color-1);
+}
+
+/* Links Section */
+.social-links a {
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #e0f0f0;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .catchphrase {
+        font-size: 1.2rem;
+    }
+    .container {
+        padding: 3rem 1rem;
+    }
+
+    .latest-release-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .latest-release-info {
+        width: 100%;
+    }
+
+    .album-card {
+        flex-direction: column;
+    }
+
+    .album-art {
+        width: 100%;
+        height: auto;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}

@@ -44,7 +44,7 @@ a:hover {
     justify-content: center;
     text-align: center;
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/hero-bg.jpg') no-repeat center center/cover;
     /* 仮の背景画像です。images/hero-bg.jpg を用意してください */
 }
 

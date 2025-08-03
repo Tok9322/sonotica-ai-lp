@@ -219,11 +219,21 @@ a:hover {
     font-weight: 600;
 }
 
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.music-service-logo {
+    height: 1.2em; /* Adjust size to fit the text line */
+    vertical-align: middle; /* Align the image vertically with the text */
+    margin-bottom: 0.2em; /* Fine-tune vertical alignment */
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background: #e0f0f0;
+    background-color: #111;
     font-size: 0.9rem;
 }
 

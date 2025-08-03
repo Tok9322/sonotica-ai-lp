@@ -59,7 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         playlistItems.forEach((item, index) => {
-            item.addEventListener('click', () => playSong(index));
+            item.addEventListener('click', (event) => {
+                // If the click target is a link, do nothing and let the browser handle it.
+                if (event.target.tagName === 'A') {
+                    return;
+                }
+                playSong(index);
+            });
         });
 
         // This function updates the 'playing' class for visual feedback.

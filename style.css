@@ -208,6 +208,7 @@ a:hover {
 }
 
 .playlist li .track-no {
+    display: inline-block;
     min-width: 1.5rem;
     text-align: right;
     font-weight: 700;
@@ -228,11 +229,15 @@ a:hover {
     font-weight: bold;
 }
 
-.playlist li.playing::after {
+/* Spotify-like: replace number with arrow for the playing item */
+.playlist li.playing .track-no {
+    color: transparent; /* hide the digits but keep width */
+}
+.playlist li.playing .track-no::after {
     content: '▶';
-    font-size: 0.8rem;
-    margin-left: 0.25rem;
     color: var(--accent-color-1);
+    position: relative;
+    left: 0;
 }
 
 /* Links Section */

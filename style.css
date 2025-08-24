@@ -44,7 +44,7 @@ a:hover {
     justify-content: center;
     text-align: center;
     color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(10, 15, 20, 0.45), rgba(10, 15, 20, 0.45)), url('images/hero-bg.jpg') no-repeat center center/cover;
     /* 仮の背景画像です。images/hero-bg.jpg を用意してください */
 }
 
@@ -60,6 +60,22 @@ a:hover {
     margin-bottom: 2rem;
     color: var(--accent-color-2);
 }
+
+/* Hero enhancements */
+.hero-topline {
+    max-width: 780px;
+    margin: 0 auto 2rem auto;
+}
+
+ 
+
+.hero-subcopy {
+    margin: 0 auto 1.25rem auto;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+ 
 
 .latest-release {
     background: rgba(20, 30, 40, 0.7);
@@ -177,10 +193,11 @@ a:hover {
     margin: 0;
     max-height: 200px;
     overflow-y: auto;
+    counter-reset: track;
 }
 
 .playlist li {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem 0.75rem 0.75rem;
     border-bottom: 1px solid var(--bg-color-dark);
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -188,6 +205,13 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+}
+
+.playlist li .track-no {
+    min-width: 1.5rem;
+    text-align: right;
+    font-weight: 700;
+    color: var(--text-color);
 }
 
 .playlist li:last-child {
@@ -204,10 +228,10 @@ a:hover {
     font-weight: bold;
 }
 
-.playlist li.playing::before {
+.playlist li.playing::after {
     content: '▶';
     font-size: 0.8rem;
-    margin-right: 0.25rem;
+    margin-left: 0.25rem;
     color: var(--accent-color-1);
 }
 

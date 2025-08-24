@@ -1,6 +1,19 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Ensure visible numbering for all playlist items ---
+    document.querySelectorAll('.playlist').forEach(ol => {
+        const items = ol.querySelectorAll('li');
+        items.forEach((li, idx) => {
+            if (!li.querySelector('.track-no')) {
+                const no = document.createElement('span');
+                no.className = 'track-no';
+                no.textContent = `${idx + 1}.`;
+                li.insertBefore(no, li.firstChild);
+            }
+        });
+    });
+
     // --- Global Audio Player Management ---
     const allAudioPlayers = document.querySelectorAll('audio');
     const pauseAllPlayers = (exception) => {

@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
         player.addEventListener('play', () => pauseAllPlayers(player));
     });
 
+    // --- Initialize Latest Release audio from data-src (handles special chars/unicode paths) ---
+    const latestReleaseAudio = document.querySelector('.latest-release audio[data-src]');
+    if (latestReleaseAudio && latestReleaseAudio.dataset.src) {
+        latestReleaseAudio.src = latestReleaseAudio.dataset.src;
+    }
+
     // --- Smooth Scrolling ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
